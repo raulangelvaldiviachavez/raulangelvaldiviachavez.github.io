@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio de Raul Valdivia, estudiante de Ciencias de la Computación en UCSP Arequipa. Proyectos de Python, algoritmos y desarrollo web.">
 <meta name="keywords" content="Raul Valdivia, UCSP, Ciencias de la Computación, Arequipa, programación, Python, portfolio">
 <meta name="author" content="Raul Valdivia">
-<link rel="canonical" href="https://raul-valdivia.github.io/">/
+<link rel="canonical" href="https://raulangelvaldiviachavez.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -428,6 +428,42 @@
     footer { flex-direction: column; gap: 0.5rem; padding: 2rem 1.5rem; }
   }
 
+  /* FOTO */
+  .photo-frame {
+    width: 220px; height: 260px;
+    position: relative; flex-shrink: 0;
+  }
+  .photo-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+    filter: grayscale(20%) contrast(1.05);
+    display: block;
+  }
+  .photo-frame::before {
+    content: '';
+    position: absolute; top: -6px; left: -6px;
+    width: 100%; height: 100%;
+    border: 1px solid var(--red);
+    z-index: -1;
+  }
+  .companions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 0.6rem;
+  }
+  .companion-card {
+    padding: 0.85rem 1rem;
+    background: var(--bg2);
+    border: 1px solid var(--border-dim);
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.2s;
+  }
+  .companion-card:hover { border-color: var(--border); }
+  .companion-role { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--red-glow); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .companion-name { font-size: 0.85rem; color: var(--text-muted); }
+  .companion-card:hover .companion-name { color: var(--text); }
+
   @media (prefers-reduced-motion: reduce) {
     .orbit-svg { animation: none; }
   }
@@ -449,7 +485,11 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-inner" style="display:flex;align-items:center;gap:3rem;flex-wrap:wrap;">
+    <div class="photo-frame">
+      <img src="raul.jpeg" alt="Raul Valdivia" loading="lazy">
+    </div>
+    <div>
     <div class="hero-eyebrow">Arequipa, Perú</div>
     <h1 class="hero-name">Raul<br><span>Valdivia</span></h1>
     <p class="hero-role">
@@ -505,7 +545,7 @@
       <div class="about-text">
         <p>Soy estudiante de <strong>primer año de CS en UCSP</strong>, Arequipa. Me interesa entender cómo funcionan las cosas — algoritmos, sistemas, astros — y luego construir algo útil con ese conocimiento.</p>
         <p>Fuera del código me obsesionan la <strong>exploración espacial</strong>, la astronomía y la idea de que el software puede cambiar cómo vivimos. También estoy aprendiendo a construir negocios desde cero.</p>
-        <p>Actualmente me encuentro en un proceso de aprendisaje en el que me baso en computacion grafica para embellecer y modelar mis proyectos , para asi poder sacarlos hacia el mundo.
+        <p>Aprendizaje kinestésico, curioso por defecto, y convencido de que los mejores proyectos nacen mezclando ciencia con ejecución.</p>
       </div>
     </div>
     <div>
@@ -595,36 +635,153 @@
     <span class="section-tag">04 — red UCSP</span>
     <div class="section-line"></div>
   </div>
-  <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Compañeros y docentes de Ciencias de la Computación — UCSP Arequipa.</p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+  <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">Docentes y compañeros de Ciencias de la Computación — UCSP Arequipa.</p>
 
-    <a href="https://yeniferhuarachi-code.github.io/yeniferhuarachihalanoca.github.io/" target="_blank" rel="noopener" style="text-decoration:none;">
-      <div class="project-card" style="cursor:pointer;">
-        <div class="project-num">Compañera</div>
-        <h3 class="project-title">Yenifer Huarachi Halanoca</h3>
-        <p class="project-desc">Estudiante de CS — UCSP. Portfolio personal.</p>
-        <div class="project-tags"><span class="tag">UCSP</span><span class="tag">CS</span></div>
-      </div>
+  <!-- DOCENTE -->
+  <p style="font-family:Space Mono,monospace;font-size:0.68rem;color:var(--red-glow);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Docente</p>
+  <div class="companions-grid" style="margin-bottom:2rem;">
+    <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Docente — LinkedIn</div>
+      <div class="companion-name">Prof. E. Cuadros V.</div>
     </a>
+  </div>
 
-    <a href="https://camilasherlyn.github.io/uscpcienciascami/" target="_blank" rel="noopener" style="text-decoration:none;">
-      <div class="project-card" style="cursor:pointer;">
-        <div class="project-num">Compañera</div>
-        <h3 class="project-title">Camila Sherlyn</h3>
-        <p class="project-desc">Estudiante de CS — UCSP. Portfolio personal.</p>
-        <div class="project-tags"><span class="tag">UCSP</span><span class="tag">CS</span></div>
-      </div>
+  <!-- COMPAÑEROS LINKEDIN -->
+  <p style="font-family:Space Mono,monospace;font-size:0.68rem;color:var(--red-glow);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Compañeros — LinkedIn</p>
+  <div class="companions-grid" style="margin-bottom:2rem;">
+    <a href="https://www.linkedin.com/in/kristel-gisselle-loayza-cruz-abb3b039b/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">LinkedIn</div>
+      <div class="companion-name">Kristel Gisselle Loayza Cruz</div>
     </a>
-
-    <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" rel="noopener" style="text-decoration:none;">
-      <div class="project-card" style="cursor:pointer;">
-        <div class="project-num">Docente</div>
-        <h3 class="project-title">Prof. E. Cuadros V.</h3>
-        <p class="project-desc">Docente de Ciencias de la Computación — UCSP Arequipa.</p>
-        <div class="project-tags"><span class="tag">UCSP</span><span class="tag">Docente</span><span class="tag">LinkedIn</span></div>
-      </div>
+    <a href="https://www.linkedin.com/in/fiorella-mar%C3%ADa-rend%C3%B3n-garc%C3%ADa-7aa9b7374/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">LinkedIn</div>
+      <div class="companion-name">Fiorella María Rendón García</div>
     </a>
+    <a href="https://www.linkedin.com/in/rpaccotacyay/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">LinkedIn</div>
+      <div class="companion-name">R. Paccotacya Y.</div>
+    </a>
+    <a href="https://www.linkedin.com/in/angel-rodriguez-cruz-58b78b85/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">LinkedIn</div>
+      <div class="companion-name">Angel Rodriguez Cruz</div>
+    </a>
+  </div>
 
+  <!-- COMPAÑEROS CON WEB -->
+  <p style="font-family:Space Mono,monospace;font-size:0.68rem;color:var(--red-glow);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Compañeros — Portfolio</p>
+  <div class="companions-grid">
+    <a href="https://gabriel-flores-ll.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Gabriel Fabrizio Flores Llancaya</div>
+    </a>
+    <a href="https://w4nd4r1.github.io/Ariana-Yasmin-Delgado-Arce/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Ariana Yasmín Delgado Arce</div>
+    </a>
+    <a href="https://aaronhumpiri.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Aaron Humpiri Obregon</div>
+    </a>
+    <a href="https://kenya-sq.github.io/Kenya-Shupingahua-Quiroz/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Kenya Magdiel Shupingahua Quiroz</div>
+    </a>
+    <a href="https://faro-m.github.io/Pagina-Web-UCSP/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Farid Aarom Morales Gonzales</div>
+    </a>
+    <a href="https://camilasherlyn.github.io/uscpcienciascami/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Camila Sherlyn Ayamamani Hinojosa</div>
+    </a>
+    <a href="https://thepandoredxxo.github.io/Alejandro-Jacob-Valencia-Delgado-pagina-web-ICC-san-pablo/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Alejandro Jacob Valencia Delgado</div>
+    </a>
+    <a href="https://yeniferhuarachi-code.github.io/yeniferhuarachihalanoca.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Yenifer Rocio Huarachi Halanoca</div>
+    </a>
+    <a href="https://yerriflores.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Yerri Tony Flores Velasquez</div>
+    </a>
+    <a href="https://franmnm.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Franco Yerix Aguilar Yucra</div>
+    </a>
+    <a href="https://annyaguilar-hub.github.io/anny_aguilar_cv/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Aguilar Zambrano Anny Briyid</div>
+    </a>
+    <a href="https://angelfabianramosmunoz.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Angel Fabian Ramos Muñoz</div>
+    </a>
+    <a href="https://diegoalonsoaragonmamani.github.io/DiegoAlonsoAragonMamani/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Diego Alonso Aragon Mamani</div>
+    </a>
+    <a href="https://timely-crepe-7fb679.netlify.app/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Vivian Elizabeth Rivera Cosi</div>
+    </a>
+    <a href="https://paputilin123.github.io/cvproyectnew/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Cristopher Maqquera Machaca</div>
+    </a>
+    <a href="https://nicocespedes0909-jpg.github.io/Nicole-Estefany-Cespedes-Conchacalle.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Nicole Estefany Cespedes Conchacalle</div>
+    </a>
+    <a href="https://michaelcadena-lp.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Michael Fabian Cadena Candia</div>
+    </a>
+    <a href="https://miguelezz.github.io/miguel-angel-atawi-zuniga-chacon/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Miguel Zuñiga Chacon</div>
+    </a>
+    <a href="https://fabrizioflv.github.io/fabrizio-web/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Fabrizio Manuel Flores Valencia</div>
+    </a>
+    <a href="https://jhshongw08.github.io/juanjosheptshongwparedesallasi/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Joshept Paredes Hallasi</div>
+    </a>
+    <a href="https://andreazevallos.github.io/Pagina-web-Andrea-Zevallos/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Andrea Milagros Zevallos Apaza</div>
+    </a>
+    <a href="https://giiovanniandresaguilarmarquez-collab.github.io/giovanniandresaguilarmarquez/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Giovanni Andrés Aguilar Marquez</div>
+    </a>
+    <a href="https://rodango.github.io/rodrigo-daniel-gaona-orozco/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Rodrigo Daniel Gaona Orozco</div>
+    </a>
+    <a href="https://skjr3.github.io/Mi-pagina-web/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Erick Eloy Mullisaca Alviz</div>
+    </a>
+    <a href="https://lucianavelarde.github.io/lucianamercedesvelardecaceres.github.io/" target="_blank" rel="noopener" class="companion-card">
+      <div class="companion-role">Portfolio</div>
+      <div class="companion-name">Luciana Mercedes Velarde Caceres</div>
+    </a>
+    <div class="companion-card no-link">
+      <div class="companion-role">Sin web aún</div>
+      <div class="companion-name">Flavio Alessandro Yazid Hancco Chaiña</div>
+    </div>
+    <div class="companion-card no-link">
+      <div class="companion-role">Sin web aún</div>
+      <div class="companion-name">Fabrizio Alessandro Ocsa Sanchez</div>
+    </div>
+    <div class="companion-card no-link">
+      <div class="companion-role">Sin web aún</div>
+      <div class="companion-name">Gael Andre Sandoval Garcia</div>
+    </div>
   </div>
 </section>
 
